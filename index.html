@@ -905,7 +905,7 @@ h1,h2,h3,h4 { font-family: var(--font-display); font-weight: 700; line-height: 1
   background: radial-gradient(ellipse at center, rgba(245,166,35,0.06) 0%, transparent 70%);
 }
 /* Venezuela SVG Map */
-.venezuela-map { position: relative; display: inline-block; } .service-icon { filter: sepia(100%) saturate(500%) hue-rotate(5deg) brightness(1.1); } .pricing-icon { filter: sepia(100%) saturate(500%) hue-rotate(5deg) brightness(1.1); }
+.venezuela-map { position: relative; display: inline-block; } #vzla-map { position: relative; z-index: 2; } .map-container::before { z-index: 1; pointer-events: none; } .map-container { padding: 0 !important; } .service-icon { filter: sepia(100%) saturate(500%) hue-rotate(5deg) brightness(1.1); } .pricing-icon { filter: sepia(100%) saturate(500%) hue-rotate(5deg) brightness(1.1); }
 
 .zones-list {
   display: flex;
