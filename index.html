@@ -24,7 +24,7 @@
 <meta name="twitter:title" content="Grúas Ezequiel CCS | Caracas 24/7">
 <meta name="twitter:description" content="Remolque profesional en Caracas. Disponibles ahora.">
 
-<!-- Fonts -->
+<!-- Leaflet Map --><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"><\/script><!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -905,7 +905,7 @@ h1,h2,h3,h4 { font-family: var(--font-display); font-weight: 700; line-height: 1
   background: radial-gradient(ellipse at center, rgba(245,166,35,0.06) 0%, transparent 70%);
 }
 /* Venezuela SVG Map */
-.venezuela-map { position: relative; display: inline-block; }
+.venezuela-map { position: relative; display: inline-block; } .service-icon { filter: sepia(100%) saturate(500%) hue-rotate(5deg) brightness(1.1); } .pricing-icon { filter: sepia(100%) saturate(500%) hue-rotate(5deg) brightness(1.1); }
 
 .zones-list {
   display: flex;
@@ -1580,7 +1580,7 @@ footer {
   <div class="nav-stripe"></div>
   <div class="nav-inner">
     <a href="#" class="nav-logo">
-      <div class="nav-logo-icon">🚛</div>
+      <div class="nav-logo-icon" style="background:transparent;overflow:hidden;"><img src="LOGO_URL_AQUI" alt="Grúas Ezequiel" style="width:36px;height:36px;object-fit:contain;"></div>
       GRÚAS<span>EZEQUIEL</span><span style="color:var(--muted);font-size:11px;margin-left:4px">CCS</span>
     </a>
     <ul class="nav-links">
@@ -1789,7 +1789,7 @@ footer {
     </div>
 
     <div class="fleet-visual reveal reveal-delay-2">
-      <div class="truck-container">
+      <div class="fleet-photos-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:4px;width:100%;"><img src="FLEET_PHOTO_1" alt="Grúas Ezequiel - Unidad 1" style="width:100%;height:200px;object-fit:cover;border-radius:2px;border:1px solid rgba(245,166,35,0.25);"><img src="FLEET_PHOTO_2" alt="Grúas Ezequiel - Unidad 2" style="width:100%;height:200px;object-fit:cover;border-radius:2px;border:1px solid rgba(245,166,35,0.25);"><img src="FLEET_PHOTO_3" alt="Grúas Ezequiel - Operación" style="width:100%;height:200px;object-fit:cover;border-radius:2px;border:1px solid rgba(245,166,35,0.25);"><div style="background:rgba(245,166,35,0.08);border:1px solid rgba(245,166,35,0.25);border-radius:2px;display:flex;align-items:center;justify-content:center;height:200px;flex-direction:column;gap:8px;"><div style="font-family:monospace;font-size:11px;color:#F5A623;font-weight:700;letter-spacing:0.1em;">FLOTA FORD</div><div style="font-family:monospace;font-size:9px;color:#808090;letter-spacing:0.2em;">SUPER DUTY</div></div></div><div class="truck-container" style="display:none;">
         <div class="truck-glow"></div>
         <!-- Ford Super Duty Tow Truck SVG Illustration -->
         <svg class="truck-svg" viewBox="0 0 560 320" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1954,7 +1954,7 @@ footer {
     <div class="coverage-map reveal reveal-delay-2">
       <div class="map-container">
         <!-- Venezuela SVG Map -->
-        <svg viewBox="0 0 400 360" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:380px;">
+        <div id="vzla-map" style="width:100%;height:400px;"></div><svg style="display:none">
           <!-- Venezuela simplified outline -->
           <path d="M85 40 L95 30 L115 25 L140 22 L165 20 L190 18 L215 20 L240 22 L260 28 L275 35 L285 28 L300 22 L315 20 L330 25 L345 30 L355 40 L360 55 L355 70 L345 80 L340 90 L350 100 L355 115 L345 125 L335 120 L325 130 L315 140 L305 150 L295 155 L285 160 L275 168 L268 180 L260 192 L252 200 L244 210 L235 220 L224 228 L215 235 L208 245 L200 255 L195 265 L190 272 L182 278 L174 268 L168 258 L162 248 L156 238 L148 230 L140 222 L130 215 L120 210 L110 205 L100 198 L92 190 L85 180 L78 170 L72 158 L68 145 L65 132 L63 118 L62 105 L65 90 L70 75 L75 60 Z" fill="#1a1a1f" stroke="#F5A623" stroke-width="1.5" stroke-opacity="0.5"/>
 
@@ -2283,7 +2283,7 @@ footer {
     <div class="footer-top">
       <div class="footer-brand">
         <a href="#" class="nav-logo" style="margin-bottom:16px;">
-          <div class="nav-logo-icon">🚛</div>
+          <div class="nav-logo-icon" style="background:transparent;overflow:hidden;"><img src="LOGO_URL_AQUI" alt="Grúas Ezequiel" style="width:36px;height:36px;object-fit:contain;"></div>
           GRÚAS<span>EZEQUIEL</span><span style="color:var(--muted);font-size:11px;margin-left:4px">CCS</span>
         </a>
         <p class="footer-tagline">Para todo terreno. El servicio de grúas más confiable de Caracas, disponible las 24 horas del día.</p>
@@ -2359,7 +2359,7 @@ footer {
 
 <!-- ═══ JAVASCRIPT ═══ -->
 <script>
-/* ─── Typewriter ─────────────────────── */
+/* ─── Venezuela Leaflet Map ────── */ (function(){var map=L.map('vzla-map',{zoomControl:true,scrollWheelZoom:false}).setView([8.0,-66.0],5);L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap &copy; CartoDB',subdomains:'abcd',maxZoom:19}).addTo(map);var goldIcon=L.divIcon({className:'',html:'<div style="width:14px;height:14px;background:#F5A623;border-radius:50%;box-shadow:0 0 10px #F5A623;animation:pulse-dot 2s ease-in-out infinite;"></div>',iconSize:[14,14],iconAnchor:[7,7]});var redIcon=L.divIcon({className:'',html:'<div style="width:10px;height:10px;background:#E8392A;border-radius:50%;box-shadow:0 0 8px #E8392A;"></div>',iconSize:[10,10],iconAnchor:[5,5]});var cities=[{name:'Caracas ⚡ 24/7',lat:10.4806,lng:-66.9036,icon:goldIcon,main:true},{name:'Maracaibo',lat:10.6666,lng:-71.6124,icon:redIcon},{name:'Valencia',lat:10.1620,lng:-68.0060,icon:redIcon},{name:'Maracay',lat:10.2469,lng:-67.5958,icon:redIcon},{name:'Barquisimeto',lat:10.0648,lng:-69.3570,icon:redIcon},{name:'Barcelona',lat:10.1319,lng:-64.6869,icon:redIcon},{name:'Mérida',lat:8.5897,lng:-71.1459,icon:redIcon},{name:'San Cristóbal',lat:7.7669,lng:-72.2258,icon:redIcon},{name:'Cumaná',lat:10.4581,lng:-64.1727,icon:redIcon},{name:'Maturín',lat:9.7500,lng:-63.1833,icon:redIcon}];cities.forEach(function(c){var m=L.marker([c.lat,c.lng],{icon:c.icon}).addTo(map);m.bindPopup('<b style="color:#F5A623;font-family:monospace;">'+c.name+'</b><br><span style="font-size:11px;color:#ccc;">'+(c.main?'Cobertura inmediata 24/7':'Traslados nacionales')+'</span>');if(c.main)m.openPopup();});})(); /* ─── Typewriter ─────────────────────── */
 const phrases = [
   'nosotros arrancamos.',
   'nosotros respondemos.',
