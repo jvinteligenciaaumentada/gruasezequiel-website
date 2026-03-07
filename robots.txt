@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gruasezequiel.com/sitemap.xml
+
+# Gruas Ezequiel CCS - Servicio de gruas 24/7 Venezuela
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
